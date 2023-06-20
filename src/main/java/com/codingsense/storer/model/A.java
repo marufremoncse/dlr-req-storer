@@ -7,15 +7,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -60,6 +62,10 @@ public class A {
     
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+    
+    @Lob
+    @Column(name = "api_response", columnDefinition = "TEXT")
+    private String apiResponse;
     
     @PrePersist
     protected void onCreate() {
