@@ -64,13 +64,13 @@ public class ApiController {
 		        
 		        if(flag=='A') {
 		        	A a = A.builder().messageId(message.getId()).messageStatus(message.getStatus()).mobile(message.getMobile())
-							.pduCount(message.getPducount()).price(message.getPducount()).sentDate(message.getSentdate())
+							.pduCount(message.getPducount()).price(message.getPducount()).sentDate(message.getSentdate()).status('N')
 							.shortMessage(message.getShortmessage()).doneDate(message.getDonedate()).gsmError(message.getGsmerror())
 							.build();
 		        	aRepository.save(a);
 		        } else if(flag=='B') {
 		        	B b = B.builder().messageId(message.getId()).messageStatus(message.getStatus()).mobile(message.getMobile())
-							.pduCount(message.getPducount()).price(message.getPducount()).sentDate(message.getSentdate())
+							.pduCount(message.getPducount()).price(message.getPducount()).sentDate(message.getSentdate()).status('N')
 							.shortMessage(message.getShortmessage()).doneDate(message.getDonedate()).gsmError(message.getGsmerror())
 							.build();
 		        	bRepository.save(b);
